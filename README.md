@@ -1,44 +1,31 @@
 # PsicoAgenda 🧠
 
-Aplicativo web para psicólogos independientes: **gestionar pacientes, citas, notas de sesión (plantilla SOAP) y cuestionarios simples**, con foco en privacidad y facilidad de uso.
+Aplicación web para profesionales de la psicología. Centraliza **pacientes, agenda de citas, notas de sesión (formato SOAP) y cuestionarios** de manera simple.
 
-> Estado: MVP en definición y arranque (oct–nov).
+> Estado: **En desarrollo (MVP)**
 
----
+## Características (MVP)
+- **Pacientes:** registro, búsqueda y etiquetas.
+- **Agenda:** crear/editar/cancelar citas; vista semanal/mensual.
+- **Sesiones:** notas libres o con **plantilla SOAP**; adjuntos.
+- **Cuestionarios:** formularios tipo Likert y evolución por paciente.
+- **Dashboard:** próximas citas y accesos rápidos.
 
-## ✨ Objetivos del MVP
-- **Pacientes**: registro básico, búsqueda y etiquetas.
-- **Agenda**: crear/editar/cancelar citas; vista por semana/mes.
-- **Sesiones**: notas (libre o SOAP), adjuntos.
-- **Cuestionarios**: formularios sencillos (Likert) y evolución por paciente.
-- **Dashboard**: próximas citas y accesos rápidos.
+## Tecnologías (plan)
+- **Backend:** C# / ASP.NET Core + Entity Framework Core + PostgreSQL
+- **Frontend (por definir):** probablemente Next.js + TypeScript
+- **Docs API:** Swagger (cuando haya endpoints)
 
-> En V1 se asume un solo profesional (sin multi-clínica).
+## Estado del proyecto
+- Repositorio creado y planificación del MVP.
+- Próximo paso: base de API (estructura y Swagger).
 
----
+## Contribuir
+- Sugerencias y reportes: abrir un **Issue** en GitHub.
+- Cuando haya código: PRs pequeños y descriptivos son bienvenidos.
 
-## 🏗️ Arquitectura (resumen)
-- **Monorepo**:
-  - `backend/` → API en C# (ASP.NET Core) + EF Core + PostgreSQL.
-  - `frontend/` → (se agregará después; probablemente Next.js + TS).
-- **Capas backend**:
-  - Controllers → Servicios de aplicación → Infraestructura (EF Core) → Base de datos.
-- **Almacenamiento**: PostgreSQL; adjuntos en storage (a definir).
+## Licencia
+MIT (pendiente de confirmación).
 
-**Más detalles**: ver [`docs/arquitectura.md`](docs/arquitectura.md).
-
----
-
-## 🧰 Tecnologías (planeadas)
-**Backend**
-- .NET 8, ASP.NET Core Web API
-- Entity Framework Core
-- PostgreSQL (Docker)
-- Swagger (documentación de API)
-
-**Frontend (posterior)**
-- Next.js + TypeScript + Tailwind + shadcn/ui
-- React Hook Form + Zod
-- Recharts (gráficas)
-
----
+## Aviso importante
+Este proyecto está en fase inicial. **No usar con datos reales de pacientes** ni para práctica clínica hasta que exista una versión estable y con medidas de seguridad documentadas.
