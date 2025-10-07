@@ -42,5 +42,3 @@ Aplicativo web para psicólogos independientes: **gestionar pacientes, citas, no
 - Recharts (gráficas)
 
 ---
-
-## 📂 Estructura del repo (propuesta)
