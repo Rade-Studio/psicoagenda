@@ -1,13 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36408.4 d17.14
+VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Core", "PsicoAgenda.Core\PsicoAgenda.Core.csproj", "{E6374CFC-1703-428C-BC29-90D52C8F0E77}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Infrastructure", "PsicoAgenda.Infrastructure\PsicoAgenda.Infrastructure.csproj", "{4EB1DB82-7BAA-4AA4-8A79-0A527B0673CD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E6374CFC-1703-428C-BC29-90D52C8F0E77} = {E6374CFC-1703-428C-BC29-90D52C8F0E77}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Api", "PsicoAgenda.Api\PsicoAgenda.Api.csproj", "{F6CDF8BB-8D93-499A-8994-5FE3D48F5685}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4EB1DB82-7BAA-4AA4-8A79-0A527B0673CD} = {4EB1DB82-7BAA-4AA4-8A79-0A527B0673CD}
+		{E6374CFC-1703-428C-BC29-90D52C8F0E77} = {E6374CFC-1703-428C-BC29-90D52C8F0E77}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
