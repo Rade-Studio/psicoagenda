@@ -8,9 +8,9 @@ namespace PsicoAgenda.Core.Domain.Models
 {
     public class EntidadBase
     {
-        Guid Id { get; set; }
-        DateTime FechaCreacion { get; set; }
-        DateTime FechaModificacion { get; set; }
-        DateTime FechaEliminacion { get; set; }
+        public Guid Id { get; set; }
+        public DateTime FechaCreacion { get; set; }
+        public DateTime FechaModificacion { get; set; }
+        public DateTime FechaEliminacion { get; set; }
     }
 }

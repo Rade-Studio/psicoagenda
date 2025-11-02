@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PsicoAgenda.Core.Domain.Models
 {
-    public class RespuestaCuestionario
+    public class RespuestaCuestionario: EntidadBase
     {
         public Guid CuestionarioId { get; set; }
         public Guid PacienteId { get; set; }
