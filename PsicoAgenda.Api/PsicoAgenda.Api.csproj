@@ -11,11 +11,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PsicoAgenda.Infrastructure\PsicoAgenda.Infrastructure.csproj" />
+    <ProjectReference Include="..\PsicoAgenda.Persistence\PsicoAgenda.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

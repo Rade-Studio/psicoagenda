@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Api", "PsicoAge
 		{E6374CFC-1703-428C-BC29-90D52C8F0E77} = {E6374CFC-1703-428C-BC29-90D52C8F0E77}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Domain", "PsicoAgenda.Domain\PsicoAgenda.Domain.csproj", "{8C4F780E-C332-460B-92A4-A09A41409CB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Persistence", "PsicoAgenda.Persistence\PsicoAgenda.Persistence.csproj", "{0D274D54-6C19-4358-B634-81FF2C081139}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +38,14 @@ Global
 		{F6CDF8BB-8D93-499A-8994-5FE3D48F5685}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6CDF8BB-8D93-499A-8994-5FE3D48F5685}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6CDF8BB-8D93-499A-8994-5FE3D48F5685}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C4F780E-C332-460B-92A4-A09A41409CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C4F780E-C332-460B-92A4-A09A41409CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C4F780E-C332-460B-92A4-A09A41409CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C4F780E-C332-460B-92A4-A09A41409CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D274D54-6C19-4358-B634-81FF2C081139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D274D54-6C19-4358-B634-81FF2C081139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D274D54-6C19-4358-B634-81FF2C081139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D274D54-6C19-4358-B634-81FF2C081139}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

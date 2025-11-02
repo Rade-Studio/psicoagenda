@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using PsicoAgenda.Infrastructure.Context;
+using PsicoAgenda.Persistence.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 

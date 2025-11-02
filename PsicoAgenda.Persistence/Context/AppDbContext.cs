@@ -1,12 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PsicoAgenda.Core.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PsicoAgenda.Domain.Models;
 
-namespace PsicoAgenda.Infrastructure.Context
+namespace PsicoAgenda.Persistence.Context
 {
     public class AppDbContext: DbContext
     {

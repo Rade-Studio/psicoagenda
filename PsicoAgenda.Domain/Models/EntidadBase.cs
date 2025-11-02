@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PsicoAgenda.Core.Domain.Models
+﻿namespace PsicoAgenda.Domain.Models
 {
     public class EntidadBase
     {
