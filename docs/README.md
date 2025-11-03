@@ -20,6 +20,10 @@ Esta documentación está diseñada para explicar el proyecto PsicoAgenda de for
    - Aprende cómo se conectan las piezas del sistema
    - Entiende por qué se usan interfaces
 
+4. **Opcional**: [UnitOfWork y Repository](UNITOFWORK_REPOSITORY.md)
+   - Entiende cómo se manejan los datos y transacciones
+   - Ve cómo se relacionan estos patrones
+
 ### Si quieres agregar funcionalidad
 
 1. **Sigue la guía**: [Agregar una Funcionalidad](AGREGAR_FUNCIONALIDAD.md)
@@ -79,6 +83,21 @@ Esta documentación está diseñada para explicar el proyecto PsicoAgenda de for
 - Ventajas: testabilidad, flexibilidad, mantenibilidad
 
 **Cuándo leerlo**: Si necesitas entender cómo se conectan las piezas del sistema o por qué se usan interfaces.
+
+---
+
+### 🗂️ [UnitOfWork y Repository](UNITOFWORK_REPOSITORY.md)
+
+**¿Qué encontrarás?**
+- ¿Qué son los patrones UnitOfWork y Repository?
+- Cómo funcionan en el proyecto
+- Relación entre Repository y UnitOfWork
+- Ejemplos prácticos paso a paso
+- Cuándo usar transacciones
+- Diferencias clave entre ambos patrones
+- Buenas prácticas y errores comunes
+
+**Cuándo leerlo**: Si necesitas entender cómo se accede y guarda la información en la base de datos, o cómo funcionan las transacciones.
 
 ---
 
@@ -161,6 +180,7 @@ docs/
 ├── GUIA_ARQUITECTURA.md         ← Estructura del proyecto
 ├── FLUJO_EJECUCION.md           ← Cómo funciona una petición
 ├── INYECCION_DEPENDENCIAS.md    ← Cómo se conectan las piezas
+├── UNITOFWORK_REPOSITORY.md     ← Patrones de acceso a datos
 ├── AGREGAR_FUNCIONALIDAD.md     ← Guía para agregar features
 └── REFERENCIAS_PROYECTO.md      ← Glosario y términos
 ```
@@ -174,6 +194,7 @@ docs/
 - 📚 **Documentos principales** - Guías completas
 - 🔄 **Flujos** - Cómo funciona algo
 - 🔌 **Conceptos técnicos** - Explicaciones de patrones
+- 🗂️ **Patrones de datos** - Acceso a datos y transacciones
 - ➕ **Guías prácticas** - Cómo hacer algo
 - 📖 **Referencias** - Consultas rápidas
 
@@ -247,6 +268,7 @@ Si ya entiendes los conceptos básicos y quieres profundizar:
 Para preguntas sobre:
 - **Arquitectura del proyecto**: Revisa [Guía de Arquitectura](GUIA_ARQUITECTURA.md)
 - **Cómo funciona algo**: Revisa [Flujo de Ejecución](FLUJO_EJECUCION.md)
+- **Acceso a datos**: Revisa [UnitOfWork y Repository](UNITOFWORK_REPOSITORY.md)
 - **Términos técnicos**: Revisa [Referencias del Proyecto](REFERENCIAS_PROYECTO.md)
 - **Agregar funcionalidad**: Revisa [Agregar una Funcionalidad](AGREGAR_FUNCIONALIDAD.md)
 
@@ -256,8 +278,9 @@ Para preguntas sobre:
 
 1. **Si eres nuevo**: Empieza con [Guía de Arquitectura](GUIA_ARQUITECTURA.md)
 2. **Si quieres entender el flujo**: Lee [Flujo de Ejecución](FLUJO_EJECUCION.md)
-3. **Si quieres agregar código**: Sigue [Agregar una Funcionalidad](AGREGAR_FUNCIONALIDAD.md)
-4. **Si tienes dudas de términos**: Consulta [Referencias del Proyecto](REFERENCIAS_PROYECTO.md)
+3. **Si quieres entender acceso a datos**: Lee [UnitOfWork y Repository](UNITOFWORK_REPOSITORY.md)
+4. **Si quieres agregar código**: Sigue [Agregar una Funcionalidad](AGREGAR_FUNCIONALIDAD.md)
+5. **Si tienes dudas de términos**: Consulta [Referencias del Proyecto](REFERENCIAS_PROYECTO.md)
 
 ---
 
