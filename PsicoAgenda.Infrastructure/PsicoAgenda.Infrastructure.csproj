@@ -9,11 +9,15 @@
   <ItemGroup>
     <Folder Include="Constants\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PsicoAgenda.Core\PsicoAgenda.Core.csproj" />
+    <ProjectReference Include="..\PsicoAgenda.Application\PsicoAgenda.Application.csproj" />
+    <ProjectReference Include="..\PsicoAgenda.Domain\PsicoAgenda.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
   </ItemGroup>
 
 </Project>

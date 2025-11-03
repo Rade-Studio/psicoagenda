@@ -1,0 +1,28 @@
+﻿using AutoMapper;
+using PsicoAgenda.Application.Dtos.Pacientes;
+using PsicoAgenda.Domain.Models;
+
+namespace PsicoAgenda.Application.Mappers;
+
+public class PacienteProfile : Profile
+{
+    public PacienteProfile()
+    {
+        CreateMap<Paciente, PacienteRespuesta>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+            .ForMember(dest => dest.Nombre, opt => opt.MapFrom(src => src.PrimerNombre))
+            .ForMember(dest => dest.Apellidos, opt => opt.MapFrom(src => src.SegundoNombre))
+            .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+            .ForMember(dest => dest.Telefono, opt => opt.MapFrom(src => src.Telefono))
+            .ForMember(dest => dest.FechaNacimiento, opt => opt.MapFrom(src => src.FechaNacimiento));
+        
+        CreateMap<PacienteCreacion, Paciente>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.PrimerNombre, opt => opt.MapFrom(src => src.Nombre))
+            .ForMember(dest => dest.SegundoNombre, opt => opt.MapFrom(src => src.Apellidos))
+            .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+            .ForMember(dest => dest.Telefono, opt => opt.MapFrom(src => src.Telefono))
+            .ForMember(dest => dest.FechaNacimiento, opt => opt.MapFrom(src => src.FechaNacimiento));
+    }
+    
+}
