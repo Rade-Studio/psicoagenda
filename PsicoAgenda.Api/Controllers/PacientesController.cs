@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PsicoAgenda.Application.Dtos.Pacientes;
 using PsicoAgenda.Application.Interfaces;
+using PsicoAgenda.Domain.Models;
 
 namespace PsicoAgenda.Api.Controllers;
 
@@ -16,29 +17,12 @@ public class PacientesController : ControllerBase
     }
     
     [HttpGet]
-    public IActionResult Get()
+    public async Task<ActionResult<PacienteRespuesta>> Get(CancellationToken cancellationToken)
     {
-        return Ok(new List<PacienteRespuesta>()
-        {
-            new(
-                Guid.Parse("11111111-1111-1111-1111-111111111111"),
-                "Ana",
-                "Ramírez",
-                "ana@mail.com",
-                "3001111111",
-                new DateTime(1995, 5, 10)
-            ),
-            new(
-                Guid.Parse("22222222-2222-2222-2222-222222222222"),
-                "Luis",
-                "Torres",
-                "luis@mail.com",
-                "3002222222",
-                new DateTime(1995, 5, 10)
-            ),
-        });
+        var pacientes = await _pacienteService.ObtenerPacientes(cancellationToken);
+        return Ok(pacientes);
     }
-    
+
     [HttpGet("{id}")]
     public async Task<ActionResult<PacienteRespuesta>> Get(Guid id, CancellationToken cancellationToken)
     {
@@ -54,6 +38,20 @@ public class PacientesController : ControllerBase
         
         return Ok();
     }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult> Put(Guid id, [FromBody] PacienteActualizacion request, CancellationToken cancellationToken)
+    {
+        var pacientes = await _pacienteService.ActualizarPaciente(id, request, cancellationToken);
+        
+        return Ok(pacientes);
+    }
     
-    
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> Delete(Guid id, CancellationToken cancellationToken)
+    {
+        await _pacienteService.EliminarPaciente(id, cancellationToken);
+        
+        return Ok("Eliminado Correctamente");
+    }
 }

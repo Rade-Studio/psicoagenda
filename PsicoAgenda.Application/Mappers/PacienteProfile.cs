@@ -14,6 +14,8 @@ public class PacienteProfile : Profile
             .ForMember(dest => dest.Apellidos, opt => opt.MapFrom(src => src.SegundoNombre))
             .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
             .ForMember(dest => dest.Telefono, opt => opt.MapFrom(src => src.Telefono))
+            .ForMember(dest => dest.ContactoEmergencia, opt => opt.MapFrom(src => src.ContactoEmergencia))
+            .ForMember(dest => dest.TagsJson, opt => opt.MapFrom(src => src.TagsJson))
             .ForMember(dest => dest.FechaNacimiento, opt => opt.MapFrom(src => src.FechaNacimiento));
         
         CreateMap<PacienteCreacion, Paciente>()
@@ -22,7 +24,19 @@ public class PacienteProfile : Profile
             .ForMember(dest => dest.SegundoNombre, opt => opt.MapFrom(src => src.Apellidos))
             .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
             .ForMember(dest => dest.Telefono, opt => opt.MapFrom(src => src.Telefono))
+            .ForMember(dest => dest.ContactoEmergencia, opt => opt.MapFrom(src => src.ContactoEmergencia))
+            .ForMember(dest => dest.TagsJson, opt => opt.MapFrom(src => src.TagsJson))
             .ForMember(dest => dest.FechaNacimiento, opt => opt.MapFrom(src => src.FechaNacimiento));
+
+        CreateMap<PacienteActualizacion, Paciente>()
+            .ForMember(dest => dest.PrimerNombre, opt => opt.MapFrom(src => src.Nombre))
+            .ForMember(dest => dest.SegundoNombre, opt => opt.MapFrom(src => src.Apellidos))
+            .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+            .ForMember(dest => dest.Telefono, opt => opt.MapFrom(src => src.Telefono))
+            .ForMember(dest => dest.ContactoEmergencia, opt => opt.MapFrom(src => src.ContactoEmergencia))
+            .ForMember(dest => dest.TagsJson, opt => opt.MapFrom(src => src.TagsJson))
+            .ForMember(dest => dest.FechaNacimiento, opt => opt.MapFrom(src => src.FechaNacimiento));
+
     }
     
 }

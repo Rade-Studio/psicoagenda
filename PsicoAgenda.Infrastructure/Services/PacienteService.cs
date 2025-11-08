@@ -21,5 +21,41 @@ public class PacienteService(IUnitOfWork unitOfWork, IMapper mapper) : IPaciente
         var paciente = mapper.Map<Paciente>(request);
         
         await unitOfWork.Pacientes.Crear(paciente);
+
+        await unitOfWork.GuardarCambios();
+    }
+
+    public async Task<IEnumerable<PacienteRespuesta>> ObtenerPacientes(CancellationToken cancellationToken)
+    {
+        var pacientes = await unitOfWork.Pacientes.SeleccionarTodos(cancellationToken);
+
+        return mapper.Map<IEnumerable<PacienteRespuesta>>(pacientes);
+    }
+
+    public async Task<PacienteRespuesta> ActualizarPaciente(Guid id, PacienteActualizacion request, CancellationToken cancellationToken)
+    {
+        var paciente = await unitOfWork.Pacientes.SeleccionarPorId(id, cancellationToken);
+        
+        if (paciente == null)
+            throw new Exception("Paciente no encontrado");
+        
+        mapper.Map(request, paciente);
+        
+        unitOfWork.Pacientes.Actualizar(paciente);
+        await unitOfWork.GuardarCambios();
+
+        return mapper.Map<PacienteRespuesta>(paciente);
+
+    }
+
+    public async Task EliminarPaciente(Guid id, CancellationToken cancellationToken)
+    {
+        var paciente = await unitOfWork.Pacientes.SeleccionarPorId(id, cancellationToken);
+        
+        if (paciente == null)
+            throw new Exception("Paciente no encontrado");
+        
+        unitOfWork.Pacientes.Eliminar(paciente);
+        await unitOfWork.GuardarCambios();
     }
 }

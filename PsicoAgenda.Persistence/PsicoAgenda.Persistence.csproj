@@ -17,6 +17,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\PsicoAgenda.Domain\PsicoAgenda.Domain.csproj" />
+      <ProjectReference Include="..\PsicoAgenda.Infrastructure\PsicoAgenda.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
