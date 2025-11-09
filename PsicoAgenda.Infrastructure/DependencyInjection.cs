@@ -9,6 +9,7 @@ public static class DependencyInjection
     public static void AddInfrastructure(this IServiceCollection services)
     {
         services.AddScoped<IPacienteService, PacienteService>();
+        services.AddScoped<ICitaService, CitaService>();
     }
     
 }
