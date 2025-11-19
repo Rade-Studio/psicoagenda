@@ -10,8 +10,8 @@ public class PacienteProfile : Profile
     {
         CreateMap<Paciente, PacienteRespuesta>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-            .ForMember(dest => dest.Nombre, opt => opt.MapFrom(src => src.PrimerNombre))
-            .ForMember(dest => dest.Apellidos, opt => opt.MapFrom(src => src.SegundoNombre))
+            .ForMember(dest => dest.Nombre, opt => opt.MapFrom(src => src.Nombre))
+            .ForMember(dest => dest.Apellidos, opt => opt.MapFrom(src => src.Apellido))
             .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
             .ForMember(dest => dest.Telefono, opt => opt.MapFrom(src => src.Telefono))
             .ForMember(dest => dest.ContactoEmergencia, opt => opt.MapFrom(src => src.ContactoEmergencia))
@@ -20,8 +20,8 @@ public class PacienteProfile : Profile
         
         CreateMap<PacienteCreacion, Paciente>()
             .ForMember(dest => dest.Id, opt => opt.Ignore())
-            .ForMember(dest => dest.PrimerNombre, opt => opt.MapFrom(src => src.Nombre))
-            .ForMember(dest => dest.SegundoNombre, opt => opt.MapFrom(src => src.Apellidos))
+            .ForMember(dest => dest.Nombre, opt => opt.MapFrom(src => src.Nombre))
+            .ForMember(dest => dest.Apellido, opt => opt.MapFrom(src => src.Apellidos))
             .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
             .ForMember(dest => dest.Telefono, opt => opt.MapFrom(src => src.Telefono))
             .ForMember(dest => dest.ContactoEmergencia, opt => opt.MapFrom(src => src.ContactoEmergencia))
@@ -29,8 +29,8 @@ public class PacienteProfile : Profile
             .ForMember(dest => dest.FechaNacimiento, opt => opt.MapFrom(src => src.FechaNacimiento));
 
         CreateMap<PacienteActualizacion, Paciente>()
-            .ForMember(dest => dest.PrimerNombre, opt => opt.MapFrom(src => src.Nombre))
-            .ForMember(dest => dest.SegundoNombre, opt => opt.MapFrom(src => src.Apellidos))
+            .ForMember(dest => dest.Nombre, opt => opt.MapFrom(src => src.Nombre))
+            .ForMember(dest => dest.Apellido, opt => opt.MapFrom(src => src.Apellidos))
             .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
             .ForMember(dest => dest.Telefono, opt => opt.MapFrom(src => src.Telefono))
             .ForMember(dest => dest.ContactoEmergencia, opt => opt.MapFrom(src => src.ContactoEmergencia))

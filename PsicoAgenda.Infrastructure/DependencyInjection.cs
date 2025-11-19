@@ -10,6 +10,8 @@ public static class DependencyInjection
     {
         services.AddScoped<IPacienteService, PacienteService>();
         services.AddScoped<ICitaService, CitaService>();
+        services.AddScoped<ISesionService, SesionService>();
+        services.AddScoped<ISesionNotaService, SesionNotaService>();
     }
     
 }

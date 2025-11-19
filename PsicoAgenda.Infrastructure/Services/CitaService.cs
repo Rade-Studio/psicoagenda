@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using PsicoAgenda.Application.Dtos.Citas;
 using PsicoAgenda.Application.Interfaces;
 using PsicoAgenda.Domain.Interfaces;
+using PsicoAgenda.Domain.Models;
 
 namespace PsicoAgenda.Infrastructure.Services
 {
@@ -24,13 +25,13 @@ namespace PsicoAgenda.Infrastructure.Services
         }
         public async Task CrearCita(CitaCreacion request)
         {
-            var cita = mapper.Map<Domain.Models.Cita>(request);
+            var cita = mapper.Map<Cita>(request);
             await unitOfWork.Citas.Crear(cita);
             await unitOfWork.GuardarCambios();
         }
         public async Task<CitaRespuesta> ActualizarCita(Guid id, CitaActualizacion request, CancellationToken cancellationToken)
         {
-            var cita = await  unitOfWork.Citas.SeleccionarPorId(id, cancellationToken);
+            var cita = await unitOfWork.Citas.SeleccionarPorId(id, cancellationToken);
             if (cita == null)
                 throw new Exception("Cita no encontrada");
             mapper.Map(request, cita);

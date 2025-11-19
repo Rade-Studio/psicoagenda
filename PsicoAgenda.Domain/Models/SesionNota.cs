@@ -2,7 +2,7 @@
 {
     public class SesionNota: EntidadBase
     {
-        public string Nota { get; set; }
+        public string Contenido { get; set; }
         public Guid SesionId { get; set; }
 
         // relations

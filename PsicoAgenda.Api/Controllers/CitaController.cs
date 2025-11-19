@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PsicoAgenda.Application.Dtos.Citas;
 using PsicoAgenda.Application.Interfaces;
 
 namespace PsicoAgenda.Api.Controllers;
@@ -28,14 +29,14 @@ public class CitaController : ControllerBase
     }
     // Crear una nueva cita
     [HttpPost]
-    public async Task<ActionResult> Post([FromBody] PsicoAgenda.Application.Dtos.Citas.CitaCreacion request)
+    public async Task<ActionResult> Post([FromBody] CitaCreacion request)
     {
         await _citaService.CrearCita(request);
         return Ok("Cita creada con exito");
     }
     // Actualizar una cita existente
     [HttpPut("{id}")]
-    public async Task<ActionResult> Put(Guid id, [FromBody] PsicoAgenda.Application.Dtos.Citas.CitaActualizacion request, CancellationToken cancellationToken)
+    public async Task<ActionResult> Put(Guid id, [FromBody] CitaActualizacion request, CancellationToken cancellationToken)
     {
         var cita = await _citaService.ActualizarCita(id, request, cancellationToken);
         return Ok(cita);
