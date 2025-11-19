@@ -12,6 +12,7 @@ public static class DependencyInjection
         services.AddScoped<ICitaService, CitaService>();
         services.AddScoped<ISesionService, SesionService>();
         services.AddScoped<ISesionNotaService, SesionNotaService>();
+        services.AddScoped<IDashBoardService, DashBoardService>();
     }
     
 }
