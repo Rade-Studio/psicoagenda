@@ -20,7 +20,7 @@ namespace PsicoAgenda.Application.Mappers
 
             CreateMap<SesionNotaCreacion, SesionNota>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
-                .ForMember(dest => dest.SesionId, opt => opt.MapFrom(src => src.SesionId))
+                .ForMember(dest => dest.SesionId, opt => opt.Ignore())
                 .ForMember(dest => dest.Contenido, opt => opt.MapFrom(src => src.Contenido))
                 .ForMember(dest => dest.Sesion, opt => opt.Ignore());
 

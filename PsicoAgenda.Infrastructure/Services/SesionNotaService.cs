@@ -26,14 +26,15 @@ namespace PsicoAgenda.Infrastructure.Services
             return mapper.Map<SesionNotaRespuesta>(nota);
         }
 
-        public async Task<SesionNotaRespuesta> CrearSesionNotaAsync(SesionNotaCreacion request, CancellationToken cancellationToken)
+        public async Task<SesionNotaRespuesta> CrearSesionNotaAsync(Guid sesionId, SesionNotaCreacion request, CancellationToken cancellationToken)
         {
             // Verificar que la sesión exista
-            var sesion = await unitOfWork.Sesiones.SeleccionarPorId(request.SesionId, cancellationToken);
+            var sesion = await unitOfWork.Sesiones.SeleccionarPorId(sesionId, cancellationToken);
             if (sesion is null)
-                throw new KeyNotFoundException($"No se encontró la sesión con id {request.SesionId}");
+                throw new KeyNotFoundException($"No se encontró la sesión con id {sesionId}");
 
             var nota = mapper.Map<SesionNota>(request);
+            nota.SesionId = sesionId;
             await unitOfWork.SesionNotas.Crear(nota);
             await unitOfWork.GuardarCambios(cancellationToken);
             return mapper.Map<SesionNotaRespuesta>(nota);

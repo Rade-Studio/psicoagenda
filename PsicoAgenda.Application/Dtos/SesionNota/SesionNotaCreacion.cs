@@ -8,7 +8,6 @@ namespace PsicoAgenda.Application.Dtos.SesionNota
 {
     public class SesionNotaCreacion
     {
-        public Guid SesionId { get; set; }
         public string Contenido { get; set; } = string.Empty;
     }
 }
