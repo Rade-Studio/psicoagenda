@@ -1,0 +1,166 @@
+# PsicoAgenda API - HTTP requests for all implemented endpoints
+# Usage: replace {{baseUrl}} with your running API base URL (e.g. http://localhost:5000 or https://localhost:7177)
+
+@baseUrl = http://localhost:5000
+
+### Pacientes - Obtener todos
+GET {{baseUrl}}/api/pacientes
+
+### Pacientes - Obtener por id
+GET {{baseUrl}}/api/pacientes/{{pacienteId}}
+
+### Pacientes - Crear
+POST {{baseUrl}}/api/pacientes
+Content-Type: application/json
+
+{
+  "nombre": "Juan",
+  "apellidos": "Perez",
+  "email": "juan.perez@example.com",
+  "telefono": "+34911222333",
+  "contactoEmergencia": "Maria Perez - +34919998877",
+  "tagsJson": "[\"ansiedad\"]",
+  "fechaNacimiento": "1990-05-15T00:00:00Z"
+},
+{
+  "nombre": "Ana",
+  "apellidos": "Lopez",
+  "email": "AnaLopez@gmail.com",
+  "telefono": "+34922333444",
+  "contactoEmergencia": "Carlos Lopez - +34928887777",
+  "tagsJson": "[\"depresion\"]",
+  "fechaNacimiento": "1985-10-20T00:00:00Z"
+},
+{
+  "nombre": "Luis",
+  "apellidos": "Garcia",
+  "email": "LuisGarcia@gmail.com",
+  "telefono": "+34933444555",
+  "contactoEmergencia": "Sofia Garcia - +34937776666",
+  "tagsJson": "[\"estres\"]",
+  "fechaNacimiento": "1978-03-30T00:00:00Z"
+ }
+
+### Pacientes - Actualizar
+PUT {{baseUrl}}/api/pacientes/{{pacienteId}}
+Content-Type: application/json
+
+{
+  "nombre": "Juan Modificado",
+  "apellidos": "Perez",
+  "email": "juan.mod@example.com",
+  "telefono": "+34911222333",
+  "contactoEmergencia": "Maria Perez - +34919998877",
+  "tagsJson": "[\"ansiedad\",\"terapia\"]",
+  "fechaNacimiento": "1990-05-15T00:00:00Z"
+}
+
+### Pacientes - Eliminar
+DELETE {{baseUrl}}/api/pacientes/{{pacienteId}}
+
+
+### Citas - Obtener todas
+GET {{baseUrl}}/api/cita
+
+### Citas - Obtener por id
+GET {{baseUrl}}/api/cita/{{citaId}}
+
+### Citas - Crear
+POST {{baseUrl}}/api/cita
+Content-Type: application/json
+
+{
+  "pacienteId": "{{pacienteId}}",
+  "fechaInicio": "2025-12-01T14:00:00Z",
+  "fechaFin": "2025-12-01T15:00:00Z",
+  "modo": "Presencial",
+  "estado": "Programada",
+  "ubicacionLink": "Consulta Centro",
+  "notas": "Primera cita"
+}
+
+### Citas - Actualizar
+PUT {{baseUrl}}/api/cita/{{citaId}}
+Content-Type: application/json
+
+{
+  "pacienteId": "{{pacienteId}}",
+  "fechaInicio": "2025-12-01T14:30:00Z",
+  "fechaFin": "2025-12-01T15:30:00Z",
+  "modo": "Presencial",
+  "estado": "Confirmada",
+  "ubicacionLink": "Consulta Centro",
+  "notas": "Cambio de hora"
+}
+
+### Citas - Eliminar
+DELETE {{baseUrl}}/api/cita/{{citaId}}
+
+
+### Sesiones - Obtener todas
+GET {{baseUrl}}/api/sesion
+
+### Sesiones - Obtener por id
+GET {{baseUrl}}/api/sesion/{{sesionId}}
+
+### Sesiones - Crear
+POST {{baseUrl}}/api/sesion
+Content-Type: application/json
+
+{
+  "pacienteId": "{{pacienteId}}",
+  "citaId": "{{citaId}}",
+  "soapSubj": "S: paciente refiere ansiedad",
+  "observaciones": "Observaciones de la sesión",
+  "analasis": "Análisis clínico",
+  "planAccion": "Recomendaciones y tareas",
+  "archivosJson": "[]"
+}
+
+### Sesiones - Actualizar
+PUT {{baseUrl}}/api/sesion/{{sesionId}}
+Content-Type: application/json
+
+{
+  "pacienteId": "{{pacienteId}}",
+  "soapSubj": "S: update sujeto",
+  "observaciones": "Observaciones actualizadas",
+  "analasis": "Análisis actualizado",
+  "planAccion": "Nuevo plan"
+}
+
+### Sesiones - Eliminar
+DELETE {{baseUrl}}/api/sesion/{{sesionId}}
+
+
+### SesionNotas - Obtener por sesion (query param)
+GET {{baseUrl}}/api/sesionnota?sesionId={{sesionId}}
+
+### SesionNotas - Crear (POST /api/sesionnota/{sesionId})
+POST {{baseUrl}}/api/sesionnota/{{sesionId}}
+Content-Type: application/json
+
+{
+  "contenido": "Nota de sesión: evolución y observaciones"
+}
+
+### SesionNotas - Actualizar
+PUT {{baseUrl}}/api/sesionnota/{{notaId}}
+Content-Type: application/json
+
+{
+  "contenido": "Nota actualizada"
+}
+
+### SesionNotas - Eliminar
+DELETE {{baseUrl}}/api/sesionnota/{{notaId}}
+
+
+### Dashboard - Resumen
+GET {{baseUrl}}/api/dashboard/summary
+
+# Notes
+# - Replace {{baseUrl}}, {{pacienteId}}, {{citaId}}, {{sesionId}}, {{notaId}} with real values from your DB.
+# - Date/time values should be in ISO 8601 (UTC) or adjusted to your server expectations.
+# - "modo" and "estado" use string values matching the enums configured in the project (e.g., "Presencial", "Programada").
+# - For VSCode REST Client, save this file and use the requests directly.

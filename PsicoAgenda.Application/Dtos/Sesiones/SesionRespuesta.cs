@@ -1,6 +1,6 @@
 ﻿using PsicoAgenda.Application.Dtos.Citas;
 using PsicoAgenda.Application.Dtos.Pacientes;
-using PsicoAgenda.Application.Dtos.SesionNota;
+// Notas will be returned as a list of string contents
 
 namespace PsicoAgenda.Application.Dtos.Sesiones
 {
@@ -16,6 +16,6 @@ namespace PsicoAgenda.Application.Dtos.Sesiones
         public string? ArchivosJson { get; set; }
         public PacienteRespuesta Paciente { get; set; }
         public CitaRespuesta Cita { get; set; }
-        public List<SesionNotaRespuesta> Notas { get; set; } = new ();
+        public List<string> Notas { get; set; } = new();
     }
 }

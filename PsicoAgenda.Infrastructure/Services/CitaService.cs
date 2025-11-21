@@ -26,6 +26,13 @@ namespace PsicoAgenda.Infrastructure.Services
         public async Task CrearCita(CitaCreacion request)
         {
             var cita = mapper.Map<Cita>(request);
+            if (cita == null) {
+                throw new Exception("Error al mapear la cita");
+            }
+            var paciente = await unitOfWork.Pacientes.SeleccionarPorId(cita.PacienteId, CancellationToken.None);
+            if (paciente == null)
+                throw new KeyNotFoundException($"No se encontró el paciente con id {cita.PacienteId}");
+
             await unitOfWork.Citas.Crear(cita);
             await unitOfWork.GuardarCambios();
         }

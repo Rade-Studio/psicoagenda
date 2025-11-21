@@ -17,8 +17,8 @@ public class SesionProfile : Profile
             .ForMember(dest => dest.Analasis, opt => opt.MapFrom(src => src.Analasis))
             .ForMember(dest => dest.PlanAccion, opt => opt.MapFrom(src => src.PlanAccion))
             .ForMember(dest => dest.ArchivosJson, opt => opt.MapFrom(src => src.ArchivosJson))
-            // Map session notes to a list of strings (contenido)
-            .ForMember(dest => dest.Notas, opt => opt.MapFrom(src => src.Notas.Select(n => n.Contenido).ToList()))
+            // Map session notes to a list of strings (contenido only)
+            .ForMember(dest => dest.Notas, opt => opt.MapFrom(src => src.Notas == null ? new List<string>() : src.Notas.Select(n => n.Contenido).ToList()))
             .ForMember(dest => dest.Paciente, opt => opt.MapFrom(src => src.Paciente))
             .ForMember(dest => dest.Cita, opt => opt.MapFrom(src => src.Cita));
 
