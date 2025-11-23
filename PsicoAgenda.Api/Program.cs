@@ -10,6 +10,7 @@ using PsicoAgenda.Persistence;
 using PsicoAgenda.Persistence.Context;
 using PsicoAgenda.Persistence.Repositories;
 using PsicoAgenda.Persistence.UnitOfWork;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,9 +35,22 @@ builder.Services.AddInfrastructure();
 builder.Services.AddScoped<PsicoAgenda.Api.Filters.FluentValidationAsyncActionFilter>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddOpenApi();
 
 builder.Services.AddApplication();
 
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddCors(options =>
+    {
+        options.AddDefaultPolicy(policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+    });
+}
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -44,6 +58,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.MapOpenApi();
+    app.UseCors();
 }
 
 app.UseHttpsRedirection();

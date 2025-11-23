@@ -16,7 +16,7 @@ public class PacienteProfile : Profile
             .ForMember(dest => dest.Telefono, opt => opt.MapFrom(src => src.Telefono))
             .ForMember(dest => dest.ContactoEmergencia, opt => opt.MapFrom(src => src.ContactoEmergencia))
             .ForMember(dest => dest.TagsJson, opt => opt.MapFrom(src => src.TagsJson))
-            .ForMember(dest => dest.FechaNacimiento, opt => opt.MapFrom(src => src.FechaNacimiento));
+            .ForMember(dest => dest.FechaNacimiento, opt => opt.MapFrom(src => src.FechaNacimiento.ToUniversalTime()));
         
         CreateMap<PacienteCreacion, Paciente>()
             .ForMember(dest => dest.Id, opt => opt.Ignore())
@@ -26,7 +26,7 @@ public class PacienteProfile : Profile
             .ForMember(dest => dest.Telefono, opt => opt.MapFrom(src => src.Telefono))
             .ForMember(dest => dest.ContactoEmergencia, opt => opt.MapFrom(src => src.ContactoEmergencia))
             .ForMember(dest => dest.TagsJson, opt => opt.MapFrom(src => src.TagsJson))
-            .ForMember(dest => dest.FechaNacimiento, opt => opt.MapFrom(src => src.FechaNacimiento));
+            .ForMember(dest => dest.FechaNacimiento, opt => opt.MapFrom(src => src.FechaNacimiento.ToUniversalTime()));
 
         CreateMap<PacienteActualizacion, Paciente>()
             .ForMember(dest => dest.Nombre, opt => opt.MapFrom(src => src.Nombre))
@@ -35,7 +35,7 @@ public class PacienteProfile : Profile
             .ForMember(dest => dest.Telefono, opt => opt.MapFrom(src => src.Telefono))
             .ForMember(dest => dest.ContactoEmergencia, opt => opt.MapFrom(src => src.ContactoEmergencia))
             .ForMember(dest => dest.TagsJson, opt => opt.MapFrom(src => src.TagsJson))
-            .ForMember(dest => dest.FechaNacimiento, opt => opt.MapFrom(src => src.FechaNacimiento));
+            .ForMember(dest => dest.FechaNacimiento, opt => opt.MapFrom(src => src.FechaNacimiento.ToUniversalTime()));
 
     }
     
