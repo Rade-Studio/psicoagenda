@@ -13,7 +13,7 @@ using PsicoAgenda.Persistence.UnitOfWork;
 using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var originUrl = Environment.GetEnvironmentVariable("ORIGIN_URL") ?? "http://localhost:3000";
 // Add services to the container.
 builder.Services.AddDbContext<AppDbContext>(db =>
 {
@@ -39,6 +39,16 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddApplication();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("default", policy =>
+    {
+        policy.WithOrigins(originUrl) // Adjust the origin as needed
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddCors(options =>
@@ -61,6 +71,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.UseCors();
 }
+app.UseCors("default");
 
 app.UseHttpsRedirection();
 

@@ -1,4 +1,4 @@
-﻿namespace PsicoAgenda.Domain.Enums
+﻿    namespace PsicoAgenda.Domain.Enums
 {
     public enum ModoCita
     {
