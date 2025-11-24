@@ -62,7 +62,6 @@ if (builder.Environment.IsDevelopment())
     });
 }
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
