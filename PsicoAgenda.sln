@@ -1,20 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 18
-VisualStudioVersion = 18.3.11206.111 d18.3
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Infrastructure", "PsicoAgenda.Infrastructure\PsicoAgenda.Infrastructure.csproj", "{4EB1DB82-7BAA-4AA4-8A79-0A527B0673CD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Api", "PsicoAgenda.Api\PsicoAgenda.Api.csproj", "{F6CDF8BB-8D93-499A-8994-5FE3D48F5685}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Infrastructure", "src\PsicoAgenda.Infrastructure\PsicoAgenda.Infrastructure.csproj", "{4EB1DB82-7BAA-4AA4-8A79-0A527B0673CD}"
 	ProjectSection(ProjectDependencies) = postProject
-		{4EB1DB82-7BAA-4AA4-8A79-0A527B0673CD} = {4EB1DB82-7BAA-4AA4-8A79-0A527B0673CD}
+		{E6374CFC-1703-428C-BC29-90D52C8F0E77} = {E6374CFC-1703-428C-BC29-90D52C8F0E77}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Domain", "PsicoAgenda.Domain\PsicoAgenda.Domain.csproj", "{8C4F780E-C332-460B-92A4-A09A41409CB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Api", "src\PsicoAgenda.Api\PsicoAgenda.Api.csproj", "{F6CDF8BB-8D93-499A-8994-5FE3D48F5685}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4EB1DB82-7BAA-4AA4-8A79-0A527B0673CD} = {4EB1DB82-7BAA-4AA4-8A79-0A527B0673CD}
+		{E6374CFC-1703-428C-BC29-90D52C8F0E77} = {E6374CFC-1703-428C-BC29-90D52C8F0E77}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Persistence", "PsicoAgenda.Persistence\PsicoAgenda.Persistence.csproj", "{0D274D54-6C19-4358-B634-81FF2C081139}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Domain", "src\PsicoAgenda.Domain\PsicoAgenda.Domain.csproj", "{8C4F780E-C332-460B-92A4-A09A41409CB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Application", "PsicoAgenda.Application\PsicoAgenda.Application.csproj", "{70F60914-E1DB-4B1D-83CA-407F68773A26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Persistence", "src\PsicoAgenda.Persistence\PsicoAgenda.Persistence.csproj", "{0D274D54-6C19-4358-B634-81FF2C081139}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicoAgenda.Application", "src\PsicoAgenda.Application\PsicoAgenda.Application.csproj", "{70F60914-E1DB-4B1D-83CA-407F68773A26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
