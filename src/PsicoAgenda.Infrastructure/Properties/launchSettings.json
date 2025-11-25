@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "PsicoAgenda.Infrastructure": {
+      "commandName": "Project"
+    },
+    "Perfil 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\user\\Documents\\psicoagenda\\PsicoAgenda\\src\\PsicoAgenda.Api\\Dockerfile"
+    },
+    "Perfil 2": {
+      "commandName": "Executable"
+    },
+    "Perfil 3": {
+      "commandName": "Project"
+    }
+  }
+}
